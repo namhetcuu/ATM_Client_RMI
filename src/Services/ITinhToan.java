@@ -37,4 +37,16 @@ public interface ITinhToan extends Remote{
     public int NapTien(long stk, long sotiennap) throws RemoteException;
     
     public ArrayList InBienLai(long stk) throws RemoteException;
+    
+    void notifyBalanceChange(String accountNumber, double newBalance) throws RemoteException;
+
+	//String getClientAccount(String accountNumber) throws RemoteException;
+	
+	void clientDisconnected(String clientAddress) throws RemoteException;
+    
+    void callbackRegister(ClientCallback callback) throws Exception;
+    
+    void notify(String clientAccount) throws RemoteException;
+    
+    
 }
