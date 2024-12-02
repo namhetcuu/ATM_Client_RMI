@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+import javax.swing.SwingUtilities;
+
 import client.FrmClient;
 
 public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCallback, Serializable{
@@ -20,7 +22,15 @@ public class ClientCallbackImpl extends UnicastRemoteObject implements ClientCal
 	@Override
 	public void notifyBalanceChange(String accountNumber, BigDecimal newBalance) throws RemoteException {
 		// TODO Auto-generated method stub
-		client.displayMessage("Account " + accountNumber + "\n new balance: " + newBalance+"\n");
+		SwingUtilities.invokeLater(() -> {
+	        client.displayMessage("Account " + accountNumber + "\n new balance: " + newBalance + "\n");
+	    });
+	}
+
+	@Override
+	public String getClientAccount(String accountNumber) throws RemoteException {
+		// TODO Auto-generated method stub
+		return accountNumber;
 	}
 
 //    private FrmClient client;

@@ -82,12 +82,13 @@ public class FrmXemSoDu extends javax.swing.JFrame {
 
             try {
                 l = String.valueOf(SharedVariables.stk);
-                k = String.valueOf(server.XemSoDu(SharedVariables.stk));
+                //k = String.valueOf(server.XemSoDu(SharedVariables.stk));
                 DecimalFormat decimalFormat = new DecimalFormat("#,##0");
                 String k = decimalFormat.format(server.XemSoDu(SharedVariables.stk));
                 stkk.setText(l);
                 htt.setText(server.timKiemNguoiNhan(SharedVariables.stk));
                 sthcc.setText(k + " VNĐ");
+                //long longValue = server.XemSoDu(SharedVariables.stk).longValue();
                 long longValue = server.XemSoDu(SharedVariables.stk).longValue();
                 String covert = convertMoneyToWords(longValue);
                 doc.setText(covert + " đồng");

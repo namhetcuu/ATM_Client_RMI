@@ -7,7 +7,7 @@ import java.rmi.RemoteException;
 public interface ClientCallback extends Remote{
 	void notifyBalanceChange(String accountNumber, BigDecimal newBalance) throws RemoteException;
 
-	
+	String getClientAccount(String accountNumber) throws RemoteException;
     
     
 }

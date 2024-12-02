@@ -78,7 +78,7 @@ public class FrmDangNhap extends javax.swing.JFrame {
                             FrmClient f = new FrmClient();
                             //TaiKhoan taiKhoan = new TaiKhoan(SharedVariables.stk,SharedVariables.tendn,SharedVariables.soTien);
                             ClientCallbackImpl clientCallbackImpl = new ClientCallbackImpl(f);
-                            server.callbackRegister(clientCallbackImpl);
+                            server.callbackRegister(clientCallbackImpl,SharedVariables.tendn);
                             
                             f.setVisible(true);
                             break;

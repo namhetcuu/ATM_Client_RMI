@@ -686,6 +686,7 @@ public class FrmClient extends javax.swing.JFrame {
     }//GEN-LAST:event_xlsActionPerformed
 
     public void displayMessage(String message) {
+    	JOptionPane.showMessageDialog(this, message,"Notification from sv",JOptionPane.INFORMATION_MESSAGE);
     	lblthongbaotuserver.setText(message);
     }
     
